@@ -33,6 +33,7 @@
                 <th>Descrição</th>
                 <th>Preço</th>
                 <th>Quantidade</th>
+                <th>Ações</th>
               </tr>
             </thead>
             <tbody>
@@ -43,6 +44,14 @@
                 <td>{{.Description}}</td>
                 <td>{{.Price}}</td>
                 <td>{{.Quantity}}</td>
+                <td>
+                  <a href="/edit?id={{.Id}}" class="btn btn-primary m-1"
+                    >Editar</a
+                  >
+                  <a href="/delete?id={{.Id}}" class="btn btn-danger m-1"
+                    >Deletar</a
+                  >
+                </td>
               </tr>
 
               {{end}}
