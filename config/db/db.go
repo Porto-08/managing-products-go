@@ -13,6 +13,5 @@ func ConectWithDatabase() *sql.DB {
 		panic(err.Error())
 	}
 
-	print("Conectado ao banco com sucesso!")
 	return db
 }

@@ -17,3 +17,7 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 	temp.ExecuteTemplate(w, "Index", AllProducts)
 }
+
+func AddProduct(w http.ResponseWriter, r *http.Request) {
+	temp.ExecuteTemplate(w, "AddProduct", nil)
+}
