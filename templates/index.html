@@ -48,9 +48,12 @@
                   <a href="/edit?id={{.Id}}" class="btn btn-primary m-1"
                     >Editar</a
                   >
-                  <a href="/delete?id={{.Id}}" class="btn btn-danger m-1"
-                    >Deletar</a
+                  <button
+                    onclick="onDelete('{{.Id}}')"
+                    class="btn btn-danger m-1"
                   >
+                    Deletar
+                  </button>
                 </td>
               </tr>
 
@@ -65,5 +68,13 @@
       </div>
     </div>
   </body>
+
+  <script>
+    function onDelete(id) {
+      if (confirm("Deseja realmente deletar?")) {
+        window.location.href = "/delete?id=" + id;
+      }
+    }
+  </script>
 </html>
 {{end}}
