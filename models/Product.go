@@ -49,3 +49,17 @@ func GetAllProducts() []Product {
 
 	return products
 }
+
+func InsertProduct(name string, description string, price float64, quantity int) {
+	db := db.ConectWithDatabase()
+
+	insertProduct, err := db.Prepare("insert into products (name, description, price, quantity) values ($1, $2, $3, $4)")
+
+	if err != nil {
+		panic(err.Error())
+	}
+
+	insertProduct.Exec(name, description, price, quantity)
+
+	defer db.Close()
+}
